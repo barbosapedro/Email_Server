@@ -1,0 +1,18 @@
+# Chaves privadas e certificados 
+*.key
+*.pem
+*.p12
+*.pfx
+private/
+
+# Passwords e segredos
+*.env
+secrets/
+passwords.txt
+
+# Logs locais
+*.log
+
+# Ficheiros temporários
+*.tmp
+*.bak
