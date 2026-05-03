@@ -1,0 +1,19 @@
+;
+; Zona reversa para 192.168.1.0/24
+;
+
+$TTL    604800
+
+@   IN  SOA     mailserver.lab.local. admin.lab.local. (
+                    2024010101
+                    604800
+                    86400
+                    2419200
+                    604800
+                )
+
+@       IN  NS      mailserver.lab.local.
+
+; Registo PTR — resolve IP para nome
+; Apenas o último octeto do IP (61 de 192.168.1.61)
+61      IN  PTR     mailserver.lab.local.

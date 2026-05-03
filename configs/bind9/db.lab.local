@@ -1,0 +1,29 @@
+; Zona direta para lab.local
+
+$TTL    604800                  ; TTL padrão: 1 semana (em segundos)
+
+; SOA — Start of Authority: identifica este servidor como autoridade da zona
+@   IN  SOA     mailserver.lab.local. admin.lab.local. (
+                    2024010101  ; Serial — incrementa sempre que um ficheiro é alterado
+                    604800      ; Refresh — frequência com que slaves verificam updates
+                    86400       ; Retry — se o refresh falhar, tenta novamente após este tempo
+                    2419200     ; Expire — após este tempo sem contacto, zona considerada inválida
+                    604800      ; Negative TTL — quanto tempo cachear respostas NXDOMAIN
+                )
+
+; NS — Name Server: declara quem são os servidores DNS desta zona
+@       IN  NS      mailserver.lab.local.
+
+; Registos A — mapeiam nomes para IPs
+; @ representa o próprio domínio (lab.local)
+@               IN  A       192.168.1.61
+mailserver      IN  A       192.168.1.61
+mail            IN  A       192.168.1.61
+
+; Registo MX — Mail Exchanger: diz a outros servidores onde entregar email para @lab.local
+; O número (10) é a prioridade — quanto menor, maior a prioridade
+@       IN  MX  10  mailserver.lab.local.
+
+; Registos TXT — usados para SPF, DKIM e DMARC (a preencher no mais tarde)
+; SPF básico
+@       IN  TXT     "v=spf1 ip4:192.168.1.61 -all"
