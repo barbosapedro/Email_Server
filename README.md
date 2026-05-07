@@ -60,11 +60,11 @@ Implementation Phases:
 
 
 
-\- \[x] Phase 0 — Environment Setup
+\- \[ ] Phase 0 — Environment Setup
 
 \- \[ ] Phase 1 — DNS with BIND9
 
-\- \[ ] Phase 2 — Postfix + Dovecot + Thunderbird
+\- \[x] Phase 2 — Postfix + Dovecot + Thunderbird
 
 \- \[ ] Phase 3 — TLS Encryption
 
